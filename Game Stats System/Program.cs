@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace CMPE103OOP
 {
@@ -37,16 +38,17 @@ namespace CMPE103OOP
             int NoInt = NoStats[4];
             int NoDex = NoStats[5];
 
-            Console.WriteLine("—————— TEYVAT WELCOMES YOU! ——————");
-            Console.WriteLine();
-            Console.WriteLine("Choose a character:");
-            Console.WriteLine("Enter 1 to select Eos.");
-            Console.WriteLine("Enter 2 to select Nyx.");
-            Console.WriteLine();
+            var Welcome = new List <string>()
+            {"—————— TEYVAT WELCOMES YOU! ——————", "\nChoose a character:", "Enter 1 to select Eos.", "Enter 2 to select Nyx."};
+            foreach(string i in Welcome)
+            {
+                Console.WriteLine(i);
+            }
 
             int charChoice;
             while (true)
             {
+                Console.WriteLine();
                 Console.Write("Enter your selection: ");
                 if (int.TryParse(Console.ReadLine(), out charChoice))
                 {
@@ -76,13 +78,15 @@ namespace CMPE103OOP
 
             do
             {
-                Console.WriteLine("—————— GAME CHARACTER STATS ——————");
-                Console.WriteLine("Enter 1 to View Base Stats.");
-                Console.WriteLine("Enter 2 to Check Equipped Item.");
-                Console.WriteLine("Enter 3 to View Overall Stats.");
-                Console.WriteLine("Enter 4 to Exit Game Stats.");
-                Console.WriteLine();
+                var GameCharStat = new List <string>()
+                {"—————— GAME CHARACTER STATS ——————", "Enter 1 to View Base Stats.", "Enter 2 to Check Equipped Item.",
+                "Enter 3 to View Overall Stats.", "Enter 4 to Exit Game Stats."};
+                foreach(string i in GameCharStat)
+                {
+                    Console.WriteLine(i);
+                }
 
+                Console.WriteLine("");
                 Console.Write("Enter your selection: ");
                 if (int.TryParse(Console.ReadLine(), out statInput))
                 {
